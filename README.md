@@ -1,25 +1,17 @@
-# hub.docker.com/r/tiredofit/postal
 
 # Introduction
 
 Dockerfile to build a [Postal](https://github.com/atech/postal) SMTP server for sending and receiving SMTP / HTTP API email.
 * This Container uses a [customized Alpine base](https://hub.docker.com/r/tiredofit/debian) which includes [s6 
-overlay](https://github.com/just-containers/s6-overlay) enabled for PID 1 Init capabilities, [zabbix-agent](https://zabbix.org) for 
-individual container monitoring, Cron also installed along with other tools (bash,curl, less, logrotate, nano, vim) for easier 
-management. 
-
-
-
-[Changelog](CHANGELOG.md)
+overlay](https://github.com/just-containers/s6-overlay) enabled for PID 1 Init capabilities, [zabbix-agent](https://zabbix.org) for individual container monitoring, Cron also installed along with other tools (bash,curl, less, logrotate, nano, vim) for easier management. 
 
 # Authors
 
-- [Dave Conroy](https://github.com/tiredofit/)
+- [Chinthaka Deshapriya]
 
 # Table of Contents
 
 - [Introduction](#introduction)
-    - [Changelog](CHANGELOG.md)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Quick Start](#quick-start)
@@ -28,20 +20,21 @@ management.
     - [Environment Variables](#environmentvariables)   
 - [Maintenance](#maintenance)
     - [Shell Access](#shell-access)
-   - [References](#references)
+    - [References](#references)
 
 # Prerequisites
 
+- [linuxserver/letsencrypt](https://hub.docker.com/r/linuxserver/letsencrypt)
 - [RabbitMQ Server](https://github.com/tiredofit/docker-rabbitmq)
 - [MariaDB Server](https://github.com/tiredofit/docker-mariadb)
 - [Spamassassin](https://github.com/tiredofit/docker-spamassassin) *optional*
 - [Clam Antivirus](https://github.com/tiredofit/docker-clamav) *optional*
+- [tiredofit/db-backup](https://hub.docker.com/r/tiredofit/db-backup)
+- [linuxserver/duplicati](https://hub.docker.com/r/linuxserver/duplicati)
 
 # Installation
 
-Automated builds of the image are available on [Registry](https://hub.docker.com/r/tiredofit/postal) and is the recommended method of 
-installation.
-
+Automated builds of the image are available on [Registry](https://hub.docker.com/r/tiredofit/postal) and is the recommended method of installation.
 
 ```bash
 docker pull hub.docker.com/tiredofit/postal:(imagetag)
